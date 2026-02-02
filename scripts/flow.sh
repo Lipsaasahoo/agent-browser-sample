@@ -1,4 +1,4 @@
-#!/bin/bash
+# !/bin/bash
 # Auto-generated Agent-Browser flow
 
 agent-browser open https://sauce-demo.myshopify.com/
