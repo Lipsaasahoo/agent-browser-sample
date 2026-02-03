@@ -1,0 +1,35 @@
+name: Agent Browser E2E Tests
+
+on:
+  push:
+    branches:  main 
+
+
+jobs:
+  e2e-tests:
+    runs-on: ubuntu-latest
+
+    env:
+      EMAIL: ${{ secrets.EMAIL }}
+      PASSWORD: ${{ secrets.PASSWORD }}
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install Agent-Browser
+        run: npm install -g agent-browser
+
+      - name: Agent-browser installation
+        run: agent-browser install
+
+      - name: Make scripts executable
+        run: chmod +x flows/*.sh
+
+      - name: Run end-to-end flows
+        run: ./flows/run-all-flows.sh

@@ -1,50 +1,50 @@
-name: Agent Browser E2E Tests
+# name: Agent Browser E2E Tests
 
-on:
-  push:
-    branches: main
+# on:
+#   push:
+#     branches: main
   
 
-jobs:
-  e2e-tests:
-    runs-on: ubuntu-latest
+# jobs:
+#   e2e-tests:
+#     runs-on: ubuntu-latest
     
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+#     steps:
+#       - name: Checkout code
+#         uses: actions/checkout@v4
       
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '18'
+#       - name: Setup Node.js
+#         uses: actions/setup-node@v4
+#         with:
+#           node-version: '18'
       
-      # - name: Install dependencies
-      #   run: npm install
+#       # - name: Install dependencies
+#       #   run: npm install
       
-      - name: Install agent-browser
-        run: npm install -g agent-browser
+#       - name: Install agent-browser
+#         run: npm install -g agent-browser
 
-      - name: Agent-browser installation
-        run: agent-browser install
+#       - name: Agent-browser installation
+#         run: agent-browser install
       
-      - name: Create snapshots directory
-        run: mkdir -p snapshots-samples
+#       - name: Create snapshots directory
+#         run: mkdir -p snapshots-samples
       
-      - name: Run E2E flow
-        run: bash ./scripts/flow.sh
+#       - name: Run E2E flow
+#         run: bash ./scripts/flow.sh
       
-      # - name: Upload snapshots
-      #   if: always()
-      #   uses: actions/upload-artifact@v4
-      #   with:
-      #     name: test-snapshots
-      #     path: snapshots/
+#       # - name: Upload snapshots
+#       #   if: always()
+#       #   uses: actions/upload-artifact@v4
+#       #   with:
+#       #     name: test-snapshots
+#       #     path: snapshots/
       
-      # - name: Validate snapshots
-      #   run: |
-      #     if [ -f snapshots/flow-3.json ]; then
-      #       echo "✓ All snapshots generated successfully"
-      #     else
-      #       echo "✗ Test failed - missing snapshots"
-      #       exit 1
-      #     fi
+#       # - name: Validate snapshots
+#       #   run: |
+#       #     if [ -f snapshots/flow-3.json ]; then
+#       #       echo "✓ All snapshots generated successfully"
+#       #     else
+#       #       echo "✗ Test failed - missing snapshots"
+#       #       exit 1
+#       #     fi
