@@ -29,7 +29,7 @@ jobs:
         run: agent-browser install
 
       - name: Make scripts executable
-        run: chmod +x scripts/run_all.sh
+        run: chmod +x scripts/login.sh && chmod +x scripts/launch.sh && chmod +x scripts/run_all.sh
 
       - name: Run end-to-end flows
         run: ./scripts/run_all.sh
