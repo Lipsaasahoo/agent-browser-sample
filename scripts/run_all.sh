@@ -1,10 +1,9 @@
 #!/bin/bash
 set -e
-chmod +x flows/login.sh
-./flows/login.sh
+chmod +x scripts/login.sh
+./scripts/login.sh
 
-chmod +x flows/launch.sh
-./flows/launch.sh
-
+chmod +x scripts/launch.sh
+./scripts/launch.sh
 
 rm -f ./auth-state.json
