@@ -1,9 +1,9 @@
 #!/bin/bash
 set -e
 
-set -a
-source .env
-set +a
+# set -a
+# source .env
+# set +a // not need in CI
 
 agent-browser open https://quality.ktern.com/#/auth/login
 agent-browser snapshot -i > snapshots/login.json
