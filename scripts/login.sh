@@ -7,6 +7,7 @@ set -e
 
 # agent-browser open https://quality.ktern.com/#/auth/login
 npx agent-browser open https://quality.ktern.com/#/auth/login --headless --no-sandbox
+sleep 3
 npx agent-browser snapshot -i > snapshots/login.json
 
 npx agent-browser type @e1 "$EMAIL"

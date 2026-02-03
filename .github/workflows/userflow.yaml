@@ -12,6 +12,8 @@ jobs:
     env:
       EMAIL: ${{ secrets.EMAIL }}
       PASSWORD: ${{ secrets.PASSWORD }}
+      CI: true
+      NODE_OPTIONS: "--max-old-space-size=4096"
 
     steps:
       - name: Checkout repo
